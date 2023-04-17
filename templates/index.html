@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipe Search</title>
+    <style>
+      /* Styles for the search bar */
+      .search-container {
+          display: flex;
+          justify-content: center;
+          margin-top: 50px;
+          margin-bottom: 50px;
+      }
+
+      .search-box {
+          width: 500px;
+          height: 50px;
+          border: none;
+          border-radius: 25px;
+          padding: 10px;
+          font-size: 18px;
+          background-color: #f2f2f2;
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .search-button {
+          width: 100px;
+          height: 50px;
+          border: none;
+          border-radius: 25px;
+          margin-left: 10px;
+          background-color: #4CAF50;
+          color: white;
+          font-size: 18px;
+          cursor: pointer;
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .search-button:hover {
+          background-color: #3e8e41;
+      }
+
+      /* Styles for the suggested search section */
+      .suggested-search-container {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 50px;
+      }
+
+      .suggested-search {
+          font-size: 18px;
+          color: #666;
+          margin-right: 10px;
+      }
+
+      .suggested-search div {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+      }
+
+      .suggested-search-link {
+          font-size: 18px;
+          color: #4CAF50;
+          text-decoration: none;
+          padding: 10px;
+          border-radius: 25px;
+          background-color: #f2f2f2;
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .suggested-search-link:hover {
+          background-color: #4CAF50;
+          color: white;
+      }
+
+      /* adding second suggested search bar */
+
+      .suggested-search-container2 {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 50px;
+      }
+
+      .suggested-search2 {
+          font-size: 18px;
+          color: #666;
+          margin-right: 10px;
+      }
+
+      .suggested-search2 div {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+      }
+
+      .suggested-search-link2 {
+          font-size: 18px;
+          color: #4CAF50;
+          text-decoration: none;
+          padding: 10px;
+          border-radius: 25px;
+          background-color: #f2f2f2;
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .suggested-search-link2:hover {
+          background-color: #4CAF50;
+          color: white;
+      }
+    </style>
+</head>
+<body>
+    <!-- Search bar section -->
+    <div class="search-container">
+        <form action="/search" method="get">
+            <input type="text" placeholder="Search recipes..." name="q" class="search-box">
+            <button type="submit" class="search-button">Search</button>
+        </form>
+    </div>
+
+    <!-- Suggested search section -->
+    <div class="suggested-search-container">
+      <span class="suggested-search">Feeling lazy? Why not try one of these:</span>
+      <div>
+          <a href="/search?q=3-ingredients" class="suggested-search-link">3-ingredients</a>
+          <a href="/search?q=quick-and-easy" class="suggested-search-link">Quick</a>
+      </div>
+    </div>
+
+    <div class="suggested-search-container2">
+      <span class="suggested-search2">Which ingredients you want to cook with:</span>
+      <div>
+          <a href="/search?q=chicken" class="suggested-search-link2">chicken</a>
+          <a href="/search?q=pork" class="suggested-search-link2">pork</a>
+          <a href="/search?q=fish" class="suggested-search-link2">fish</a>
+          <a href="/search?q=beef" class="suggested-search-link2">beef</a>
+      </div>
+    </div>
+  </body>
+</html>
