@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <style>
+        body {
+          background-color: #3498db;
+          font-family: Arial, sans-serif;
+        }
+        #search-container {
+          width: 50%;
+          margin: auto;
+          text-align: center;
+          padding: 50px;
+          background-color: #ffffff;
+          border-radius: 10px;
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        #search-container input[type=text] {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          box-sizing: border-box;
+          border: none;
+          border-radius: 4px;
+          font-size: 16px;
+        }
+        #search-container input[type=submit] {
+          background-color: #4CAF50;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 16px;
+        }
+        .card-img-top {
+          max-height: 200px;
+        }
+      </style>
+      <div id="search-container">
+        <h1>Search for a Recipe</h1>
+        <form action="/search">
+          <input type="text" name="q" placeholder="Enter a dish name...">
+          <input type="submit" value="Search">
+        </form>
+</head>
+
+<body>   
+    {% if results %}
+        <h3>Search results for "{{ query }}"</h3>
+        {% for result in results %}
+          <div class="card mb-3">
+              <div class="card-body">
+                  <h5 class="card-title">{{ result['Title'] }}</h5>
+                  <img src="{{ result['ImageURL'] }}" class="card-img-top" alt="Recipe Image">
+                  <p class="card-text"><strong>Ingredients:</strong> {{ result['Ingredients'] }}</p>
+                  <p class="card-text"><strong>Instructions:</strong> {{ result['Instructions'] }}</p>
+              </div>
+          </div>
+        {% endfor %}
+
+    {% endif %}
+    </div>
+</body>
+{% endblock %}
